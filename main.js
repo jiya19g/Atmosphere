@@ -26,19 +26,19 @@ const createWeatherCard = (cityName, weatherItem, index) => {
         let backgroundImage = "";
 
         if (weatherDescription.toLowerCase() === "scattered clouds" || weatherDescription.toLowerCase() == "broken clouds" ||  weatherDescription.toLowerCase() == "overcast clouds") {
-            document.body.style.backgroundImage = "url('/newWEATHER/images/cloudy.jpg')";
+            document.body.style.backgroundImage = "url('cloudy.jpg')";
         } 
         else if (weatherDescription.toLowerCase() === "rain" || weatherDescription.toLowerCase() == "shower rain" || weatherDescription.toLowerCase() == "light rain") {
-            document.body.style.backgroundImage = "url('/newWEATHER/images/rainy.jpg')";
+            document.body.style.backgroundImage = "url('rainy.jpg')";
         } 
         else if (weatherDescription.toLowerCase() == "thunderstorm" ) {
-            document.body.style.backgroundImage = "url('/newWEATHER/images/rainy_c.jpg')";
+            document.body.style.backgroundImage = "url('rainy_c.jpg')";
         } 
         else if (weatherDescription.toLowerCase() === "snow" || weatherDescription.toLowerCase() == "mist") {
-            document.body.style.backgroundImage = "url('/newWEATHER/images/snowy.jpg')";
+            document.body.style.backgroundImage = "url('snowy.jpg')";
         } 
         else {
-            document.body.style.backgroundImage = "url('/newWEATHER/images/clear.jpg')";
+            document.body.style.backgroundImage = "url('clear.jpg')";
         }
         return `<div class="details">
                     <h2>${cityName} (${weatherItem.dt_txt.split(" ")[0]})</h2>
@@ -60,9 +60,6 @@ const createWeatherCard = (cityName, weatherItem, index) => {
                 </li>`;
     }
 }
-
-
-
 const getWeatherDetails = (cityName, latitude, longitude) => {
     const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`;
 
